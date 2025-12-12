@@ -1,0 +1,16 @@
+Уменьшить полномочия для обычного пользователя
+        1. В коде при создании пользователя заменить 
+         grant_r_client_query = f"GRANT pg_read_all_data TO {username}"
+                grant_w_client_query = f"GRANT pg_write_all_data TO {username}"
+                cursor.execute(grant_r_client_query)
+                cursor.execute(grant_w_client_query)
+
+        на
+
+        GRANT SELECT ON tablename TO rolename;
+        GRANT INSERT, UPDATE, DELETE ON tablename TO rolename;
+
+        2. в тексте курсовой заменить ст25
+Заменить оставшиеся в коде Листбокс на более понятний Тайбл
+
+        3. исправить функцию администратора добавить колегу

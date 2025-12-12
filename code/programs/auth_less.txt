@@ -1,0 +1,10 @@
+https://datagy.io/python-requests-authentication/
+
+# Authentication in Requests with HTTPBasicAuth
+import requests
+from requests.auth import HTTPBasicAuth
+auth = HTTPBasicAuth('user', 'pass')
+
+print(requests.get('https://httpbin.org/basic-auth/user/pass', auth=auth))
+
+# Returns: <Response [200]>
